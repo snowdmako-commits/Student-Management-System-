@@ -94,3 +94,25 @@ def delete_student():
     except Exception as e:
         print("error:", e)
 
+def search_student():
+
+    try:
+        students = load_students()
+
+        student_id = int(input("enter student ID: "))
+
+        for student in students:
+
+            if student["id"] == student_id:
+                print("ID:", student["id"])
+                print("Name:", student["name"])
+                print("Age:", student["age"])
+                return
+
+        print("student not found")
+
+    except ValueError as e:
+        print("value Error:", e)
+
+    except Exception as e:
+        print("error:", e)
