@@ -45,4 +45,28 @@ def show_students():
     except Exception as e:
         print("error:", e)
 
+def update_student():
+
+    try:
+        students = load_students()
+
+        student_id = int(input("enter student ID: "))
+
+        for student in students:
+
+            if student["id"] == student_id:
+                student["name"] = input("enter new name: ")
+                student["age"] = int(input("enter new age: "))
+
+                save_students(students)
+                print("student updated")
+                return
+
+        print("student not found")
+
+    except ValueError as e:
+        print("value Error:", e)
+
+    except Exception as e:
+        print("error:", e)
 
