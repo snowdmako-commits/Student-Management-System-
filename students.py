@@ -1,6 +1,7 @@
 from database import load_students, save_students
 
 def add_student():
+
     try:
         students = load_students()
 
@@ -25,4 +26,23 @@ def add_student():
 
     except Exception as e:
         print("error:", e)
+
+def show_students():
+
+    try:
+        students = load_students()
+
+        if not students:
+            print("student list is empty")
+            return
+
+        for student in students:
+            print("--------------------")
+            print("ID:", student["id"])
+            print("Name:", student["name"])
+            print("Age:", student["age"])
+
+    except Exception as e:
+        print("error:", e)
+
 
