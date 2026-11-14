@@ -70,3 +70,27 @@ def update_student():
     except Exception as e:
         print("error:", e)
 
+def delete_student():
+
+    try:
+        students = load_students()
+
+        student_id = int(input("enter student ID: "))
+
+        for student in students:
+
+            if student["id"] == student_id:
+                students.remove(student)
+                save_students(students)
+
+                print("student deleted")
+                return
+
+        print("student not found")
+
+    except ValueError as e:
+        print("value Error:", e)
+        
+    except Exception as e:
+        print("error:", e)
+
