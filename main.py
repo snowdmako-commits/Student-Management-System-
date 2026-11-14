@@ -11,3 +11,31 @@ while True:
     5. Search Student
     6. Exit
     """)
+
+    try:
+        choice = int(input("enter choice: "))
+
+        if choice == 1:
+            add_student()
+
+        elif choice == 2:
+            show_students()
+
+        elif choice == 3:
+            update_student()
+
+        elif choice == 4:
+            delete_student()
+
+        elif choice == 5:
+            search_student()
+
+        elif choice == 6:
+            print("Goodbye!")
+            break
+        
+        else:
+            print("invalid choice")
+
+    except ValueError:
+        print("please enter a number")
